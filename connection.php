@@ -8,7 +8,7 @@ $con=mysqli_connect($hostname,$username,$password,$dbname);
 
 if($con)
 {
-    echo "";
+  //  echo "yes";
 }
 else{
     echo "fail";

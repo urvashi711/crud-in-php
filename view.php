@@ -9,6 +9,7 @@ include "connection.php";
     <th colspan="2">Actions</th>
 </tr>
 
+
 <?php
 $query = "SELECT * FROM country";
 $data = mysqli_query($con,$query);
@@ -20,7 +21,8 @@ if($result)
        <tr>
           <td><?php  echo $row['name']; ?></td>
           <td><?php  echo $row['country_id']; ?></td>
-          <td><a href="update.php?<?php  echo $row['id'];?>">Edit</a></td>
+          <td><a href="update.php?id=<?php  echo $row['id'];?>">Edit</a></td>
+          <td><a onclick="return corfim('Are you sure, you want to delete?')" href="delete.php?id=<?php echo $row['id'];?>">Delete</a></td>
        </tr>
       <?php
    }
@@ -32,7 +34,6 @@ else
       <th>no record foud!!!</th>
     </tr>
     <?php
-
 }
 
 ?>

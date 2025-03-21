@@ -12,7 +12,7 @@ include "connection.php";
     <div>
         <form action="" method="POST">
         country:-
-        <input type="text" name="name" ><br><br>
+        <input type="text" name="name"><br><br>
 
         country_id:-
         <input type="number" name="country_id"><br><br>
@@ -27,12 +27,8 @@ include "connection.php";
     if(isset($_POST['submit'])){
         $country = $_POST['name'];
         $country_id = $_POST['country_id'];
-
-
         $query = "INSERT INTO country(name,country_id) VALUES('$country','$country_id')";
-
         $data = mysqli_query($con,$query);
-
         if($data)
         {
             echo "yes!!!";
@@ -41,9 +37,7 @@ include "connection.php";
             echo "no";
         }
     }
-    
-    
-    
+
     ?>
 </body>
 </html>
